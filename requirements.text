@@ -1,3 +1,4 @@
+gradio
 altair==5.1.1
 anyio==4.0.0
 arch==6.1.0
