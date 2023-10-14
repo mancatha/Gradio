@@ -54,14 +54,14 @@ def predict(text):
     # Your text prediction code here
     return "Prediction: " + text
 
-    # Set up interface
+      # Set up interface
     # Inputs
 gender= gr.Dropdown(label = "What is the gender of the customer?", choices = ["Female", "Male"], value= "Male")
 SeniorCitizen= gr.Dropdown( label="Is the customer a senior citizen?", choices= ["No","Yes"], value="No")
 Partner= gr.Radio(label= "Does the customer have a partner?", choices= ["No", "Yes"], value="No")
 Dependents= gr.Radio(label= "Does the customer have dependents?", choices= ["No", "Yes"], value="No")
 tenure= gr.Number(label= "How many months has the customer stayed with the company?", minimum= 1, maximum= 72, interactive= True, value= 1, step =1)
-PhoneService= gr.Dropdown(label=" Does the customer has a phone service?", choices=["No", "Yes"], value= "Yes")
+PhoneService= gr.Dropdown(label=" Does the customer has a phone service?", choices=["No", "Yes"],interactive=True, value= "Yes")
 MultipleLines= gr.Radio(label="Does the customer has multiple lines?", choices=["No", "Yes", "No phone service"], value="No")
 InternetService= gr.Dropdown(label="What is the customer's internet service provider?", choices=["Fiber optic", "DSL", "No Internet Service"], value="Fiber optic")
 OnlineSecurity= gr.Radio(label="Does the customer has online security?", choices=["No", "Yes", "No internet service"], value="No")
@@ -77,11 +77,13 @@ MonthlyCharges= gr.Slider(label= "What is the monthly amount charged to the cust
 TotalCharges= gr.Slider(label= "What is the total amount charged to the customer?", minimum= 15, maximum= 9000, value= 220, interactive= True)
 
 
+
+
 # Create the Gradio interface
-gr.Interface(inputs=[gender, SeniorCitizen, Partner, Dependents, tenure, PhoneService, MultipleLines, InternetService, OnlineSecurity, OnlineBackup, DeviceProtection, TechSupport, StreamingTV, StreamingMovies, Contract, PaperlessBilling, PaymentMethod, MonthlyCharges, TotalCharges],
+gr.Interface(inputs=[gender, SeniorCitizen, Partner, Dependents, tenure, PhoneService, MultipleLines, InternetService, OnlineSecurity, OnlineBackup, DeviceProtection, TechSupport, StreamingTV, StreamingMovies, Contract, PaperlessBilling, PaymentMethod, MonthlyCharges, TotalCharges ],
              fn=predict_customer_attrition,
              outputs= gr.Label("Awaiting Submission...."),
              title="Telecommunication Customer Attrition Prediction App",
-             description="This app was created by Santorini during our P4 ", live=True).launch(inbrowser=True, show_error=True)
+             description="This app was created by Santorini during our Project 4 ", live=True).launch(inbrowser=True, show_error=True)
 
 
