@@ -19,8 +19,6 @@ The deployment process in data analysis and machine learning is a crucial step t
 ## Setup
 1. **Clone the repository:**
 
-   git clone  
-
 https://github.com/mancatha/P4-Gradio.git 
 
 
